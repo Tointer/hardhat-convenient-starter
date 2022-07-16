@@ -4,12 +4,15 @@
 // Hardhat tests are normally written with Mocha and Chai.
 
 // We import Chai to use its asserting functions here.
-const { expect } = require("chai");
+import { expect, use } from "chai";
+import { BigNumber, Contract, Wallet } from "ethers";
+import { ethers, userConfig } from "hardhat";
+import { Token } from "../typechain-types";
 
 // We use `loadFixture` to share common setups (or fixtures) between tests.
 // Using this simplifies your tests and makes them run faster, by taking
 // advantage or Hardhat Network's snapshot functionality.
-const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
+import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 
 // `describe` is a Mocha function that allows you to organize your tests.
 // Having your tests organized makes debugging them easier. All Mocha
