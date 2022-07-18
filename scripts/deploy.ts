@@ -3,6 +3,8 @@
 
 import path from "path";
 import { ethers, network, artifacts } from "hardhat";
+import { BigNumber, Contract, Wallet } from "ethers";
+import { Token } from "../typechain-types";
 
 async function main() {
   // This is just a convenience check
@@ -33,7 +35,7 @@ async function main() {
   saveFrontendFiles(token);
 }
 
-function saveFrontendFiles(token) {
+function saveFrontendFiles(token: Contract) {
   const fs = require("fs");
   const contractsDir = path.join(__dirname, "..", "frontend", "src", "contracts");
 
